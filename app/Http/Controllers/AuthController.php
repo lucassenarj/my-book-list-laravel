@@ -21,8 +21,8 @@ class AuthController extends Controller
     {
         $credentials = $request->only('username', 'email', 'password');
         $rules = [
-            'username' => 'required|max:255|unique:users',
-            'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|max:255|unique:book_users',
+            'email' => 'required|email|max:255|unique:book_users',
         ];
         $validator = Validator::make($credentials, $rules);
         if($validator->fails()) {
